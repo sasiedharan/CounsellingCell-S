@@ -2,7 +2,7 @@ export const Home = () => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
-          Welcome to the Counselling Cell
+          Welcome to the Counselling Cell ....
         </h1>
         <p className="text-lg text-gray-600 mb-8 max-w-xl text-center">
           We are here to help you with emotional support, guidance, and advice. 
