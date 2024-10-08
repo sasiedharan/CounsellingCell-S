@@ -21,7 +21,9 @@ function App() {
           <Route path="/Appointment" element={<Appointment />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
+        
       </Router>
+      
     </div>
   );
 }
