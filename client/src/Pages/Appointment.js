@@ -35,7 +35,7 @@ export const Appointment = () => {
             {/* Date Field */}
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="date">
-                Appointment Date
+                Book Appointment Date 
               </label>
               <input
                 type="date"
