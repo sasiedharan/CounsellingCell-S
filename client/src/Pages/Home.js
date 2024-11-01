@@ -1,7 +1,8 @@
-export const Home = () => {
+export const Home = (props) => {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50">
-       
+        <h1>This is the Homepage & user is :{props.username}</h1>
+
         <div className="homehelp ,  slideover">
            Chat with us
         </div>
