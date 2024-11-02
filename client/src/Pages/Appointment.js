@@ -1,3 +1,4 @@
+import React from 'react';
 export const Appointment = () => {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
@@ -9,13 +10,14 @@ export const Appointment = () => {
             {/* Name Field */}
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="name">
-                Full Name
+                Patient's Full Name
               </label>
               <input
                 type="text"
                 id="name"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your full name"
+                required
               />
             </div>
   
@@ -29,6 +31,7 @@ export const Appointment = () => {
                 id="email"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
                 placeholder="Enter your email"
+                required
               />
             </div>
             {/* Phone number */}
@@ -37,11 +40,15 @@ export const Appointment = () => {
                 Contact Number
               </label>
               <input
-                type="contact number"
-                id="contact number"
+                type="tel"
+                id="ContactNumber"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Enter your contact number"
+                 placeholder="+91 xxxxx xxxxx"
+                 pattern="[0-9]{10}"
+                 required
               />
+              
+              
             </div>
             {/* Date Field */}
             <div className="mb-4">
@@ -52,7 +59,10 @@ export const Appointment = () => {
                 type="date"
                 id="date"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
               />
+              
+
             </div>
   
             {/* Time Field */}
@@ -64,18 +74,20 @@ export const Appointment = () => {
                 type="time"
                 id="time"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
               />
             </div>
   
             {/* Reason Field */}
             <div className="mb-6">
               <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="reason">
-                Reason for Appointment
+                Specify the symptoms
               </label>
               <textarea
                 id="reason"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Describe the reason for your appointment"
+                placeholder="Describe the specific reason Here"
+                required
               ></textarea>
             </div>
   
