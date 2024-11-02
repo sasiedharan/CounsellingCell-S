@@ -31,7 +31,18 @@ export const Appointment = () => {
                 placeholder="Enter your email"
               />
             </div>
-  
+            {/* Phone number */}
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="Contact number">
+                Contact Number
+              </label>
+              <input
+                type="contact number"
+                id="contact number"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                placeholder="Enter your contact number"
+              />
+            </div>
             {/* Date Field */}
             <div className="mb-4">
               <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="date">
