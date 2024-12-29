@@ -1,0 +1,101 @@
+/* Container styles */
+.appointment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #38b2ac, #4299e1);
+}
+
+/* Form box styles */
+.appointment-form {
+    width: 90%;
+    max-width: 32rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: left;
+}
+
+.appointment-form:hover {
+    transform: scale(1.05);
+}
+
+/* Header styles */
+.appointment-header {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    animation: fade-in 1s ease-out;
+}
+
+/* Fade-in animation */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Label and input alignment */
+label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-field, .textarea-field {
+    width: 75%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    box-shadow: 0 0 0 1px rgba(66, 153, 225, 0.5);
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: left;
+}
+
+.input-field:focus, .textarea-field:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+/* Submit button alignment */
+.submit-btn {
+    width: 100%;
+    background-color: #3182ce;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #2b6cb0;
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.5);
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .appointment-form {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .input-field, .textarea-field, .submit-btn {
+        width: 100%;
+    }
+}

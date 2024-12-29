@@ -1,106 +1,130 @@
 import React from 'react';
-export const Appointment = () => {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-blue-500">
-        <div className="w-full max-w-lg bg-white p-8 rounded-lg shadow-lg">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-            Book an Appointment
-          </h1>
-          <form>
-            {/* Name Field */}
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="name">
-                Patient's Full Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Enter your full name"
-                required
-              />
-            </div>
-  
-            {/* Email Field */}
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="email">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            {/* Phone number */}
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="Contact number">
-                Contact Number
-              </label>
-              <input
-                type="tel"
-                id="ContactNumber"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                 placeholder="+91 xxxxx xxxxx"
-                 pattern="[0-9]{10}"
-                 required
-              />
-              
-              
-            </div>
-            {/* Date Field */}
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="date">
-                Book Appointment Date 
-              </label>
-              <input
-                type="date"
-                id="date"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-              
+import './Appointment.css';  // Import the CSS file
 
-            </div>
-  
-            {/* Time Field */}
-            <div className="mb-4">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="time">
-                Appointment Time
-              </label>
-              <input
-                type="time"
-                id="time"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                required
-              />
-            </div>
-  
-            {/* Reason Field */}
-            <div className="mb-6">
-              <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="reason">
-                Specify the symptoms
-              </label>
-              <textarea
-                id="reason"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-                placeholder="Describe the specific reason Here"
-                required
-              ></textarea>
-            </div>
-  
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              Book Appointment
-            </button>
-          </form>
-        </div>
-      </div>
-    );
+export const Appointment = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = {
+      patientName: formData.get('patientName'),
+      emailAddress: formData.get('emailAddress'),
+      contactNumber: formData.get('contactNumber'),
+      appointmentDate: formData.get('appointmentDate'),
+      appointmentTime: formData.get('appointmentTime'),
+      symptoms: formData.get('symptoms'),
+    };
+    
+    console.log('Form submitted with data:', data);
+    // Process the form data here, like sending it to the server
   };
-  
+
+  return (
+    <div className="appointment-container">
+      <div className="appointment-form">
+        <h1 className="appointment-header">
+          Book an Appointment
+        </h1>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          {/* Name Field */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="patientName">
+              Patient's Full Name
+            </label>
+            <input
+              type="text"
+              id="patientName"
+              name="patientName"
+              aria-label="Patient's full name"
+              className="input-field"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          {/* Email Field */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="emailAddress">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="emailAddress"
+              name="emailAddress"
+              className="input-field"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          {/* Phone Number */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="contactNumber">
+              Contact Number
+            </label>
+            <input
+              type="tel"
+              id="contactNumber"
+              name="contactNumber"
+              className="input-field"
+              placeholder="+91 xxxxxxxxxx"
+              pattern="^\+91\s[1-9]{1}[0-9]{9}$"
+              required
+            />
+          </div>
+
+          {/* Date Field */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="appointmentDate">
+              Book Appointment Date
+            </label>
+            <input
+              type="date"
+              id="appointmentDate"
+              name="appointmentDate"
+              className="input-field"
+              required
+            />
+          </div>
+
+          {/* Time Field */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="appointmentTime">
+              Appointment Time
+            </label>
+            <input
+              type="time"
+              id="appointmentTime"
+              name="appointmentTime"
+              className="input-field"
+              required
+            />
+          </div>
+
+          {/* Reason Field */}
+          <div className="relative mb-6">
+            <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="symptoms">
+              Specify the Symptoms
+            </label>
+            <textarea
+              id="symptoms"
+              name="symptoms"
+              className="textarea-field"
+              placeholder="Describe the specific reason here"
+              required
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            type="submit"
+            className="submit-btn"
+          >
+            Book Appointment
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
